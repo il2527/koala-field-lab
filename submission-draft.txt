@@ -1,0 +1,91 @@
+Growing Together: Modeling a Mother Koala and Her Joey
+
+1. Description of the phenomenon
+
+My project explores how food, rest, and maternal care interact in the lives of koalas. Eucalyptus leaves provide limited energy and are difficult to digest, so koalas spend much of their day sleeping or resting. A joey initially depends on its mother's milk. During development, it consumes pap, which transfers digestive microorganisms, and gradually begins eating eucalyptus leaves. This creates an interesting modeling question: how can a mother meet her own needs while supporting a developing baby?
+
+My prototype represents this relationship through separate mother and joey energy and recovery bars. Users can choose leaf location and suitability, select the joey's developmental stage, feed either animal, and compare enough rest with insufficient rest. The observation trail explains each score change.
+
+[Before submitting: add your actual observation source, such as the title/link of a video you watched, and describe one specific behavior you noticed. This draft does not claim a direct wildlife observation.]
+
+2. How I used AI
+
+I used ChatGPT/Codex to develop the concept, discuss koala biology, translate behaviors into computational rules, generate HTML/CSS/JavaScript, and revise the prototype. I directed the changes rather than accepting the first version. For example, I requested separate bars for mother and baby, stage-dependent maternal care costs, and removal of scent interactions.
+
+Examples from my conversation:
+
+Prompt: "how does joey effects mother's energy? do nor code yet"
+Useful response, summarized: producing milk and carrying a joey require maternal energy; development can be represented through different milk and carrying costs.
+
+Prompt: "do not make it to two simple bars, make baby and mother have saperate bars."
+Useful response, summarized: use a mother bar and a joey bar, with different feeding options and care costs at each developmental stage.
+
+Prompt: "also, remove the scent fuctions."
+Result: the final version focuses on feeding, rest, and development without scent animations or scent-mark controls.
+
+One important revision came from questioning the meaning of the energy bar. AI initially proposed that resting should reduce energy loss. I wanted enough rest to visibly improve the mother's condition. AI then suggested separate energy and readiness bars, but I chose separate mother and joey bars because their relationship was the focus of my project. The compromise was to describe each bar as a simplified energy and recovery score. This made the interaction match my design intent while acknowledging that rest does not create food energy.
+
+Another revision addressed unclear language: "Rest one step" did not explain what a user was doing. I asked what it meant, and we changed the interaction to "Enough rest" and "Not enough rest." I also removed scent features to keep attention on feeding, development, and care. These choices show how I evaluated AI proposals and narrowed the model's purpose.
+
+My contribution was selecting the phenomenon, supplying research questions and source links, deciding what interactions mattered, and requesting revisions. AI generated the code and ran automated behavior checks. I should not claim that I independently wrote or debugged that code.
+
+AI also helped distinguish evidence from assumptions. The claim that koalas cannot recognize leaves on a flat surface was not verified, so the prototype labels it as an assumption. The numerical scores are invented for exploration. Enough rest increases recovery in the model; it does not supply calories. These distinctions helped me avoid treating every feature as a scientific fact.
+
+3. Design and code evidence
+
+Code: [Insert the public GitHub repository URL after publication.]
+Prototype: index.html in that repository; download and open it in a browser.
+
+[Add a screenshot showing the two bars and the joey stage selector.]
+[Add a second screenshot showing the observation trail after feeding or resting.]
+
+The intended audience is classmates exploring how a mother's needs interact with a developing joey's needs. The interaction flow is: choose a developmental stage and food conditions, take an action, then compare the two bars and read the explanation. A user can change one condition at a time and repeat an action to compare outcomes.
+
+The interface uses a habitat illustration, controls for food and development, separate bars, and a written observation trail. The separate bars show that feeding the joey can help the baby while costing the mother resources. Text and numerical values accompany the visual changes, so users do not have to infer the outcome from color alone. Reset supports repeated experiments while preserving the chosen scenario. The youngest joey stays in the pouch; older stages are shown outside it. I refined the design through this conversation; I have not included a separate hand-drawn sketch.
+
+4. Reflection on computational thinking
+
+Decomposition helped me divide a complex relationship into smaller parts: food location, leaf suitability, rest, milk production, carrying, and the baby's diet. Instead of trying to model every biological process, I focused on a few interactions that users could explore.
+
+Pattern recognition helped me notice repeated cycles of feeding, resting, and caring. These became repeatable actions. Development introduced another pattern: the joey's food changes gradually, and the mother's responsibilities change with it.
+
+Abstraction helped me represent mother and baby with separate state variables. This made their relationship visible: feeding the baby can improve its score while costing the mother resources. A stage selector lets users compare developmental stages without pretending that a few clicks represent months of growth.
+
+Conditional rules made the model understandable. Suitable leaves on a branch provide a gain, unsuitable leaves do not, and the ground-leaf assumption leads to searching without food. Stage-specific rules determine what the joey can eat. Scores stay between 0 and 100, and Reset allows repeated comparisons.
+
+The final code expresses these choices through two scores, a stage configuration, and conditional action rules. For example, at the milk-dependent stage both scores begin at 60. Feeding the mother suitable branch leaves changes the scores to mother 64 and joey 58: the mother receives 12 food points and pays 4 activity points plus 4 care points, while the joey uses 2 points for ongoing needs. After a reset, feeding the joey milk changes the scores to mother 55 and joey 68. This makes the relationship between the two animals visible through interaction rather than only through a paragraph.
+
+Codex's automated checks covered separate scores, branch and ground feeding, stage-specific costs, joey feeding, both rest choices, score limits, stopping actions after the mother's modeled death, and Reset. These checks validate the programmed rules; they do not validate the model as biology or replace my own browser testing.
+
+[Before submitting: perform one comparison yourself, add screenshots, and describe the result in your own words. Example: reset at each joey stage, feed the mother the same suitable branch leaf once, and compare the scores. The expected mother results are 64, 65, 66, and 68 for milk, pap, older joey, and independent stages. Explain that the differences come from invented care costs.]
+
+The project showed me that a model depends on its assumptions. Rest and nutrition are different biological processes, but my bars combine energy and recovery to keep the interaction simple. The score values and death threshold are not biological predictions. A future version could use observed feeding and resting data, test the ground-leaf assumption, and represent the transition through pap in more detail.
+
+Sources
+
+Australian Koala Foundation — Diet and digestion:
+https://savethekoala.com/about-koalas/koalas-diet-digestion/
+
+Australian Koala Foundation — Life cycle:
+https://savethekoala.com/about-koalas/life-cycle-koala/
+
+Australian Museum — The koala genome:
+https://australian.museum/get-involved/amri/the-koala-genome/
+
+Submission checklist
+
+- Replace the observation placeholder with your actual experience.
+- Add the public GitHub link and screenshots.
+- Read and personalize the reflection so it represents your own learning.
+- Paste this text into a Google Doc and give your instructor viewing access.
+- Submit the Google Doc link in Canvas.
+
+Rubric alignment (9 points total)
+
+AI Learning — Reflective & Experimental: the draft documents curiosity, iterative prompts, a disagreement about rest, the student's decisions, AI's role, and unsupported assumptions.
+
+Design — Purposeful & Clear: the draft identifies the audience, learning goal, interaction flow, reasons for two animal bars, and the decision to remove distracting scent features.
+
+Code — Expressive & Iterative: the draft explains state, stage-specific costs, conditional rules, a numerical example, and AI-run verification. Add your own observed test result to demonstrate personal understanding and experimentation.
+
+This alignment does not guarantee a grade. Complete the evidence placeholders and personalize the reflection before submission.

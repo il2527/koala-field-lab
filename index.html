@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Growing together · Koala field lab</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#263d36;background:#f4f1e8}*{box-sizing:border-box}body{margin:0}main{max-width:1120px;margin:auto;padding:36px 24px}header{display:flex;justify-content:space-between;align-items:center;gap:20px}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#607568}h1{font-family:Georgia,serif;font-size:clamp(36px,6vw,62px);font-weight:400;margin:12px 0}h2{font-size:19px;margin:0 0 18px}p{line-height:1.6}.intro{max-width:660px;color:#607168}.badge{border:1px solid #c5cebd;border-radius:30px;padding:10px 16px;font-size:12px;white-space:nowrap}.lab{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:30px}.scene{background:#e4ebda;border-radius:24px;overflow:hidden;position:relative;min-height:460px}.scene svg{width:100%;height:390px;display:block}.caption{padding:0 26px 24px;font-size:14px}.panel{background:#fffdf7;border-radius:24px;padding:25px}label{display:block;font-size:14px;margin:20px 0 9px}select,button{font:inherit}select{width:100%;padding:12px;border:1px solid #cad2c3;border-radius:10px;background:#fffdf7;color:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:13px 16px;background:#2e5646;color:white}button:hover{background:#426d59}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #b77938;outline-offset:3px}button.secondary{background:#e9eddf;color:#294b3b}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.check{display:flex;gap:9px;line-height:1.4}.check input{width:18px;flex-shrink:0}.stats{display:flex;gap:24px;margin-top:22px}.stats strong{display:block;font-size:24px}small{color:#667467;line-height:1.5}meter{width:100%;height:16px}.log{margin-top:24px;background:#fffdf7;border-radius:20px;padding:24px}#events{padding-left:22px;line-height:1.7;font-size:14px}.notes{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:36px 0}details{border-top:1px solid #cbd2c3;padding:20px 0}summary{cursor:pointer;font-weight:600}a{color:#2d6551}pre{white-space:pre-wrap;font-size:13px;line-height:1.6}#koala{transition:transform .65s}#koala.dead{filter:grayscale(1);opacity:.65}#koala.dead .mother-eye{display:none}.death-eye{display:none}#koala.dead .death-eye{display:block}#koala.dead .sleep-eye{display:none}#joey.depleted{filter:grayscale(1);opacity:.4}.leaf{fill:#5c8556}.ground{display:none}footer{font-size:12px;color:#687566;border-top:1px solid #cbd2c3;padding:18px 0}@media(max-width:760px){.lab,.notes{grid-template-columns:1fr}header{align-items:flex-start}.badge{display:none}main{padding:24px 16px}}@media(prefers-reduced-motion:reduce){#koala{transition:none}}
+button:disabled{opacity:.5;cursor:default}.sleep-eye{display:none}#koala.resting .mother-eye{display:none}#koala.resting .sleep-eye{display:block}.costs{font-size:13px;line-height:1.7;background:#edf0e5;padding:12px;border-radius:10px;margin-top:15px}.day-strip{display:flex;border-radius:6px;overflow:hidden;margin:12px 0}.day-strip span{padding:10px;font-size:12px}.day-strip .sleep{flex:20;background:#c5d3bb}.day-strip .awake{flex:4;background:#e8d8b7}
+</style></head>
+<body><main>
+<header><span class="eyebrow">Field notes / Computational thinking</span><span class="badge">Interactive learning model</span></header>
+<h1>Growing together.</h1>
+<p class="intro">How does a koala decide what to eat? Explore how food placement, rest, and a mother caring for her joey can shape a simple decision.</p>
+<div class="lab"><section class="scene" aria-label="Koala habitat illustration">
+<svg viewBox="0 0 680 390" role="img" aria-labelledby="scene-title"><title id="scene-title">A mother koala carrying a joey in her pouch beside eucalyptus leaves and a eucalyptus tree</title>
+<circle cx="550" cy="72" r="38" fill="#f7f1c9"/><path d="M0 310 Q150 260 320 320 T680 290 V390 H0" fill="#c3d1ae"/>
+<path d="M430 350 Q400 220 438 0" stroke="#8c7960" stroke-width="55" fill="none"/><path d="M428 174 L272 111 M426 124 L570 52" stroke="#8c7960" stroke-width="20" stroke-linecap="round"/>
+<g fill="#9fb58c"><ellipse cx="466" cy="35" rx="100" ry="40"/><ellipse cx="318" cy="59" rx="106" ry="39"/></g>
+<g id="branch-leaves" class="leaf"><ellipse cx="285" cy="104" rx="13" ry="34" transform="rotate(-45 285 104)"/><ellipse cx="314" cy="119" rx="12" ry="31" transform="rotate(24 314 119)"/><ellipse cx="259" cy="121" rx="11" ry="29" transform="rotate(-65 259 121)"/></g>
+<g id="ground-leaves" class="ground leaf"><ellipse cx="280" cy="330" rx="32" ry="10" transform="rotate(-15 280 330)"/><ellipse cx="320" cy="340" rx="30" ry="11"/></g>
+<g id="koala" transform="translate(330 200)"><ellipse cy="43" rx="46" ry="60" fill="#87958f"/><ellipse cy="47" rx="28" ry="43" fill="#dce1d6"/><circle cx="-38" cy="-29" r="25" fill="#87958f"/><circle cx="38" cy="-29" r="25" fill="#87958f"/><circle cx="-38" cy="-29" r="16" fill="#cbd3c9"/><circle cx="38" cy="-29" r="16" fill="#cbd3c9"/><ellipse cy="-6" rx="46" ry="40" fill="#a4afa6"/><ellipse cy="1" rx="13" ry="21" fill="#30413d"/><circle class="mother-eye" cx="-23" cy="-9" r="4" fill="#263d36"/><circle class="mother-eye" cx="23" cy="-9" r="4" fill="#263d36"/><g class="sleep-eye" stroke="#263d36" stroke-width="3" fill="none"><path d="M-29 -9 Q-23 -3 -17 -9 M17 -9 Q23 -3 29 -9"/></g><g class="death-eye" stroke="#263d36" stroke-width="3" stroke-linecap="round"><path d="M-28 -14 L-18 -4 M-18 -14 L-28 -4 M18 -14 L28 -4 M28 -14 L18 -4"/></g><path d="M-6 25 Q0 29 6 25" stroke="#30413d" fill="none" stroke-width="2"/><ellipse cx="49" cy="48" rx="30" ry="13" transform="rotate(-20 49 48)" fill="#87958f"/>
+<g id="joey" aria-label="Joey tucked inside mother’s pouch"><title>Joey in mother’s pouch (schematic cutaway)</title><ellipse cx="0" cy="66" rx="25" ry="25" fill="#6d8176"/><ellipse cx="0" cy="65" rx="14" ry="19" fill="#aebbb0"/><circle cx="-13" cy="45" r="9" fill="#aebbb0"/><circle cx="13" cy="45" r="9" fill="#aebbb0"/><ellipse cx="0" cy="52" rx="17" ry="15" fill="#bdc8bc"/><circle cx="-8" cy="49" r="2" fill="#263d36"/><circle cx="8" cy="49" r="2" fill="#263d36"/><ellipse cx="0" cy="54" rx="5" ry="7" fill="#30413d"/><path d="M-25 67 Q0 85 25 67 L22 86 Q0 104 -22 86 Z" fill="#c6d0c3"/><path d="M-25 67 Q0 85 25 67" fill="none" stroke="#82978a" stroke-width="3"/></g></g>
+<text x="28" y="36" fill="#3c5848" font-family="system-ui" font-size="13">EUCALYPTUS HABITAT · SCHEMATIC</text>
+</svg><div class="caption" id="status" role="status" aria-live="polite">Ready to explore. Choose a leaf and take one foraging step.</div></section>
+<section class="panel"><h2>Set the scene</h2><label for="placement">Where are the leaves?</label><select id="placement"><option value="branch">On a branch</option><option value="flat">On a flat surface</option></select>
+<label for="quality">Choose a leaf to investigate</label><select id="quality"><option value="suitable">Suitable · lower toxin level</option><option value="unsuitable">Unsuitable · higher toxin level</option></select>
+<label for="stage">Joey development</label><select id="stage"><option value="milk">Milk-dependent · in pouch</option><option value="pap">Transition · milk + pap</option><option value="leaves">Older joey · milk + leaves</option><option value="independent">Independent · leaves</option></select><p id="stage-description"></p><button class="secondary" id="joey-action">Drink milk</button><div id="costs" class="costs"></div>
+<p><small>Model rule: when the koala reaches the ground, she automatically ignores leaves on flat surfaces. This behavior is an unverified assumption.</small></p>
+<div class="stats"><div><small>Mother’s energy</small><strong id="energy">60 / 100</strong></div><div><small>Actions</small><strong id="steps">0</strong></div></div><meter id="meter" min="0" max="100" value="60" aria-label="Mother’s energy">60</meter>
+<div class="stats"><div><small>Joey’s energy</small><strong id="joey-energy">60 / 100</strong></div></div><meter id="joey-meter" min="0" max="100" value="60" aria-label="Joey’s energy">60</meter>
+<p><small>Both bars are simplified energy and recovery scores. Rest improves recovery; it does not supply food energy.</small></p>
+<div class="buttons"><button id="forage">Feed mother</button><button class="secondary" id="rest">Enough rest</button><button class="secondary" id="poor-rest">Not enough rest</button><button class="secondary" id="reset">Reset</button></div>
+<p><small>Energy points and decision thresholds are invented teaching values, not biological measurements.</small></p></section></div>
+<section class="log"><h2>A day of conserving energy</h2><div class="day-strip" aria-label="Illustrative day: 20 hours resting and 4 hours feeding or moving"><span class="sleep">20 h resting</span><span class="awake">4 h active</span></div><small>Illustrative schedule, not a timer. Koalas often sleep or rest around 18–22 hours daily. Low-energy, fibrous leaves make conserving energy important. Enough rest raises both recovery scores; insufficient rest lowers them. The rest choices represent the same abstract period, not a fixed number of hours.</small></section>
+<section class="log"><h2>Observation trail</h2><ol id="events"><li>Mother and joey started with 60 energy and recovery points each.</li></ol></section>
+<div class="notes"><section><span class="eyebrow">The real phenomenon</span><h2 style="margin-top:12px">A specialized diet, a selective eater.</h2><p>Eucalyptus leaves contain natural toxins. Koalas have adaptations for this diet, but they are selective about the leaves they eat.</p><p>Joeys develop in their mother’s pouch for about six months, then begin spending time outside it, including riding on her back. The youngest joey is shown using a schematic pouch cutaway. Pap passes digestive microorganisms from mother to joey; older joeys gradually eat leaves while still receiving milk.</p></section><section><span class="eyebrow">The model’s limits</span><h2 style="margin-top:12px">A question, not a proven rule.</h2><p>The claim that koalas cannot recognize leaves on a flat surface was not verified in the sources below. This prototype applies that assumption automatically whenever the koala reaches the ground.</p><p>At zero energy, the mother koala dies in this simplified simulation. This invented energy rule does not predict survival in real animals; a joey at zero is shown as depleted and can recover through stage-appropriate feeding or rest while the mother is alive. Neither bar predicts real animal survival.</p></section></div>
+<details><summary>Computational thinking & pseudocode</summary><p><b>Decompose:</b> leaf placement, energy, mother–joey attachment, and rest. <b>Patterns:</b> repeated searching and selective feeding. <b>Abstract:</b> represent complex metabolism with separate mother and joey scores and a few decision rules.</p><pre>START mother = 60, joey = 60
+SELECT development stage; preserve both scores
+FEED MOTHER: accept suitable branch leaves; ignore flat leaves
+  mother += food - activity - stage-specific milk and carrying costs
+  joey -= 2 (ongoing needs)
+FEED JOEY: milk early; milk + pap during transition; leaves when older
+  mother pays stage-specific care and activity costs
+  joey gains from eligible food; pap explains the digestive transition
+ENOUGH REST: both scores increase (simplified recovery)
+NOT ENOUGH REST: both scores decrease
+Clamp both scores to 0–100
+At mother = 0: show death and stop actions until Reset</pre></details>
+<details><summary>AI use & reflection prompts for your submission</summary><p><b>AI contribution:</b> ChatGPT researched the premise, identified an unsupported claim, proposed a simplified model, and generated this HTML/CSS/JavaScript prototype.</p><p><b>Useful follow-up prompt:</b> “How can I represent koala leaf selection with state and conditional rules without presenting unverified behavior as fact?”</p><p><b>Your observation:</b> Add what you personally observed, where you observed it, and whether it was a video, a zoo visit, or another source. Do not describe this simulation as a real animal observation.</p><p><b>Try this comparison:</b> Reset, choose branch leaves, and forage three times. Repeat with flat-surface leaves. Explain how the automatic ignore rule changes the outcome. Repeat with different joey stages and compare the displayed milk and carrying costs. Compare resting with searching for unsuitable leaves.</p><p><b>Reflection:</b> How did representing the mother and joey as one moving group simplify the code? Which complex behaviors did the model leave out? What evidence would you need to test the flat-surface assumption?</p></details>
+<details><summary>Sources & evidence</summary><ul><li><a href="https://savethekoala.com/about-koalas/koalas-diet-digestion/">Australian Koala Foundation — low-energy diet and rest</a></li><li><a href="https://savethekoala.com/about-koalas/life-cycle-koala/">Australian Koala Foundation — joey development and pouch stage</a></li><li><a href="https://australian.museum/get-involved/amri/the-koala-genome/">Australian Museum — toxins and selective leaf choice</a></li><li><a href="https://australian.museum/learn/animals/mammals/koala/">Australian Museum — diet and solitary behavior</a></li></ul></details>
+<footer>Koala field lab · Student exploration prototype · No external libraries or accounts needed</footer>
+</main><script>
+const $=id=>document.getElementById(id);
+let energy=60,joeyEnergy=60,steps=0;
+const stages={
+ milk:{milk:3,carry:1,action:'Feed joey milk',description:'Diet: milk. The joey stays in the pouch and cannot eat leaves yet.',transform:'translate(0 0)'},
+ pap:{milk:2,carry:1,action:'Milk + learn about pap',description:'Diet: milk + pap. Pap passes digestive microorganisms to the joey during the gradual transition to leaves.',transform:'translate(0 -12)'},
+ leaves:{milk:1,carry:1,action:'Feed joey a leaf',description:'Diet: milk + leaves. The older joey rides with its mother and can try suitable leaves.',transform:'translate(-53 -47) scale(1.2)'},
+ independent:{milk:0,carry:0,action:'Feed young koala a leaf',description:'Diet: leaves. The young koala feeds independently; maternal milk and carrying costs are zero.',transform:'translate(-140 45) scale(1.4)'}
+};
+const clamp=n=>Math.max(0,Math.min(100,n));
+function record(message){$('status').textContent=message;const li=document.createElement('li');li.textContent=message;$('events').append(li);}
+function render(){
+ const stage=stages[$('stage').value],flat=$('placement').value==='flat';
+ $('energy').textContent=energy+' / 100';$('meter').value=energy;
+ $('joey-energy').textContent=joeyEnergy+' / 100';$('joey-meter').value=joeyEnergy;$('steps').textContent=steps;
+ ['forage','rest','poor-rest','joey-action'].forEach(id=>$(id).disabled=energy===0);
+ $('forage').textContent=energy===0?'Mother has died':'Feed mother';
+ $('koala').classList.toggle('dead',energy===0);$('joey').classList.toggle('depleted',joeyEnergy===0);
+ $('scene-title').textContent=energy===0?'The mother koala has died in this simulation.':'Mother and joey: '+stage.description;
+ $('branch-leaves').style.display=flat?'none':'block';$('ground-leaves').style.display=flat?'block':'none';
+ $('stage-description').textContent=stage.description;$('joey-action').textContent=stage.action;
+ $('joey').setAttribute('transform',stage.transform);$('joey').setAttribute('aria-label',stage.description);
+ $('costs').textContent='Mother’s care costs per action: milk −'+stage.milk+', carrying −'+stage.carry+'. Feeding activity −4; suitable leaves +12. Enough rest: recovery +10 minus care costs. Not enough rest: −6 minus care costs. Stage costs are illustrative, not measured.';
+}
+function finish(message,motherDelta,joeyDelta){
+ const motherBefore=energy,joeyBefore=joeyEnergy;steps++;
+ energy=clamp(energy+motherDelta);joeyEnergy=clamp(joeyEnergy+joeyDelta);
+ record('Action '+steps+': '+message+' Mother '+motherBefore+' → '+energy+'; joey '+joeyBefore+' → '+joeyEnergy+'.'+(joeyEnergy===0?' Joey depleted: needs appropriate food or recovery.':'')+(energy===0?' The mother has died. Reset to start again.':''));render();
+}
+function care(){const s=stages[$('stage').value];return s.milk+s.carry;}
+function wake(){$('koala').classList.remove('resting');}
+$('forage').addEventListener('click',()=>{
+ if(!energy)return;wake();const flat=$('placement').value==='flat',suitable=!flat&&$('quality').value==='suitable';
+ $('koala').setAttribute('transform',flat?'translate(220 265)':'translate(330 200)');
+ finish(flat?'She ignored ground leaves (model assumption).':suitable?'She ate suitable branch leaves.':'She rejected the unsuitable leaf.',(suitable?12:0)-4-care(),-2);
+});
+$('rest').addEventListener('click',()=>{if(!energy)return;$('koala').classList.add('resting');finish('Enough rest improved recovery. Mother: +10 recovery minus '+care()+' care costs. Joey: +8 recovery.',10-care(),8);});
+$('poor-rest').addEventListener('click',()=>{if(!energy)return;wake();finish('Not enough rest lowered recovery. Mother: −6 minus '+care()+' care costs. Joey: −6.',-6-care(),-6);});
+$('joey-action').addEventListener('click',()=>{
+ if(!energy)return;wake();const stage=$('stage').value;
+ if(stage==='milk'){finish('The joey drinks milk: joey +10 food minus 2 ongoing needs. Mother pays 1 activity plus '+care()+' care costs.',-1-care(),8);}
+ else if(stage==='pap'){finish('The joey receives milk (+10 minus 2 ongoing needs). Pap transfers gut microorganisms; it does not instantly complete development. Mother pays 1 activity plus '+care()+' care costs.',-1-care(),8);}
+ else{const suitable=$('placement').value==='branch'&&$('quality').value==='suitable';
+ finish(suitable?'The young koala eats a suitable branch leaf (+10 minus 2 ongoing needs). The mother gains no energy from this meal.':'No suitable branch leaf for the young koala. No food gain; ongoing needs cost 2.',-1-care(),suitable?8:-2);}
+});
+$('reset').addEventListener('click',()=>{energy=60;joeyEnergy=60;steps=0;$('events').replaceChildren();wake();$('koala').setAttribute('transform','translate(330 200)');record('Reset: mother and joey each have 60 points. Scenario settings are preserved.');render();});
+['placement','quality','stage'].forEach(id=>$(id).addEventListener('change',()=>{render();$('status').textContent=energy===0?'The mother has died. Reset to start again.':'Scenario updated. Both scores are preserved; stage selection changes future care costs and the joey’s food.';}));render();
+</script></body></html>
