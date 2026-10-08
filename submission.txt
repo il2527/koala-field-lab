@@ -61,31 +61,3 @@ Codex's automated checks covered separate scores, branch and ground feeding, sta
 
 The project showed me that a model depends on its assumptions. Rest and nutrition are different biological processes, but my bars combine energy and recovery to keep the interaction simple. The score values and death threshold are not biological predictions. A future version could use observed feeding and resting data, test the ground-leaf assumption, and represent the transition through pap in more detail.
 
-Sources
-
-Australian Koala Foundation — Diet and digestion:
-https://savethekoala.com/about-koalas/koalas-diet-digestion/
-
-Australian Koala Foundation — Life cycle:
-https://savethekoala.com/about-koalas/life-cycle-koala/
-
-Australian Museum — The koala genome:
-https://australian.museum/get-involved/amri/the-koala-genome/
-
-Submission checklist
-
-- Replace the observation placeholder with your actual experience.
-- Add the public GitHub link and screenshots.
-- Read and personalize the reflection so it represents your own learning.
-- Paste this text into a Google Doc and give your instructor viewing access.
-- Submit the Google Doc link in Canvas.
-
-Rubric alignment (9 points total)
-
-AI Learning — Reflective & Experimental: the draft documents curiosity, iterative prompts, a disagreement about rest, the student's decisions, AI's role, and unsupported assumptions.
-
-Design — Purposeful & Clear: the draft identifies the audience, learning goal, interaction flow, reasons for two animal bars, and the decision to remove distracting scent features.
-
-Code — Expressive & Iterative: the draft explains state, stage-specific costs, conditional rules, a numerical example, and AI-run verification. Add your own observed test result to demonstrate personal understanding and experimentation.
-
-This alignment does not guarantee a grade. Complete the evidence placeholders and personalize the reflection before submission.
